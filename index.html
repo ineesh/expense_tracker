@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="style.css" rel="stylesheet">
+
+
+</head>
+	<script>
+function taable(){
+	
+	var d = document.getElementById("desc").value;
+	var da = document.getElementById("date").value;
+	var amt = document.getElementById("amt").value;
+	var td = document.getElementById("td");
+	
+	var row = td.insertRow(1);
+	
+	
+	var cell_1 = row.insertCell(0);
+	var cell_2 = row.insertCell(1);
+	var cell_3 = row.insertCell(2);
+	
+	cell_1.innerHTML = d;
+	cell_2.innerHTML = da;
+	cell_3.innerHTML = amt;
+	
+}	
+
+
+	
+	
+</script>
+
+<body>
+	<h1>EXPENCE TRACKER</h1>
+	<br>
+	
+	<form> 
+	<div class="op">
+	<label for="description">ENTER DESCRIPTION</label>
+	<input type="text" name="description" id="desc">
+		
+
+		
+	<label for="date">ENTER DATE</label>
+	<input type="text" name="date" id="date">
+		
+	
+	
+	<label for="amount">ENTER AMOUNT</label>
+	<input type="text" name="amount" id="amt">
+	
+	
+	<br>
+	<br>
+	
+		
+		<button onClick="taable()">submit</button>
+		
+		</div>
+
+	
+	
+	</form>
+	<br>
+	<table style="width: 100%" id="td">
+		
+	<tr>
+		<th>DESCRIPTION</th>
+		<th>DATE</th>
+		<th>AMOUNT</th>
+	</tr>
+		
+	<tr>
+		<td>lol</td>
+		<td>s</td>
+		<td>a</td>
+	</tr>
+		
+	</table>
+
+</body>
+	
+
+</html>

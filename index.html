@@ -7,31 +7,6 @@
 
 
 </head>
-	<script>
-function taable(){
-	
-	var d = document.getElementById("desc").value;
-	var da = document.getElementById("date").value;
-	var amt = document.getElementById("amt").value;
-	var td = document.getElementById("td");
-	
-	var row = td.insertRow(1);
-	
-	
-	var cell_1 = row.insertCell(0);
-	var cell_2 = row.insertCell(1);
-	var cell_3 = row.insertCell(2);
-	
-	cell_1.innerHTML = d;
-	cell_2.innerHTML = da;
-	cell_3.innerHTML = amt;
-	
-}	
-
-
-	
-	
-</script>
 
 <body>
 	<h1>EXPENCE TRACKER</h1>
@@ -40,7 +15,7 @@ function taable(){
 	<form> 
 	<div class="op">
 	<label for="description">ENTER DESCRIPTION</label>
-	<input type="text" name="description" id="desc">
+	<input type="text" name="description" id="desc" autofocus>
 		
 
 		
@@ -57,7 +32,7 @@ function taable(){
 	<br>
 	
 		
-		<button onClick="taable()">submit</button>
+		<button onClick="taable()" id="as">submit</button>
 		
 		</div>
 
@@ -80,8 +55,44 @@ function taable(){
 	</tr>
 		
 	</table>
+	
+	
 
 </body>
+	<script>
+		
+
 	
+	function taable(){
+
+	var d = document.getElementById("desc").value;
+	var da = document.getElementById("date").value;
+	var amt = document.getElementById("amt").value;
+	var td = document.getElementById("td");
+		
+	
+	
+	var row = td.insertRow(1);
+	
+	
+	var cell_1 = row.insertCell(0);
+	var cell_2 = row.insertCell(1);
+	var cell_3 = row.insertCell(2);
+	
+		
+	cell_1.innerHTML = d;
+	cell_2.innerHTML = da;
+	cell_3.innerHTML = amt;
+		
+			console.log("re");	
+	
+}	
+
+
+	
+	
+</script>
+
+
 
 </html>

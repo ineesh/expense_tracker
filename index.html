@@ -51,7 +51,7 @@
 	
 	<br>
 	<br>
-	<div class="op2">
+	<div id="op2">
 	<h2>EXPENSES</h2>
 	<h2 id="op1"></h2>
 	</div>
@@ -68,6 +68,10 @@
 	var amt = document.getElementById("amt").value;
 	var td = document.getElementById("td");
 
+	if(d == "")
+	{
+		return;}
+	else{
 	td.style.opacity = 1;
 	
 	var row = td.insertRow(1);
@@ -78,7 +82,7 @@
 	var cell_2 = row.insertCell(1);
 	var cell_3 = row.insertCell(2);
 	
-
+	
 		
 	cell_1.innerHTML = d;
 	cell_2.innerHTML = da;
@@ -99,11 +103,11 @@
 				
 			
 			}
-		document.getElementsByClassName("op2").style.opacity = 1;
+		document.getElementById("op2").style.opacity = 1;
 		document.getElementById("op1").innerHTML = income;
 		
 }	
-
+	}
 
 	
 	

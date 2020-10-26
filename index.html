@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<h1>EXPENCE TRACKER</h1>
+	<h1 id="l">EXPENCE TRACKER</h1>
 	<br>
 	
 	<form id="form1"> 
@@ -51,10 +51,10 @@
 	
 	<br>
 	<br>
-	
+	<div class="op2">
 	<h2>INCOME</h2>
 	<h2 id="op1"></h2>
-	
+	</div>
 
 </body>
 	<script>
@@ -68,6 +68,7 @@
 	var amt = document.getElementById("amt").value;
 	var td = document.getElementById("td");
 
+	td.style.opacity = 1;
 	
 	var row = td.insertRow(1);
 
@@ -98,6 +99,7 @@
 				
 			
 			}
+		document.getElementsByClassName("op2").style.opacity = 1;
 		document.getElementById("op1").innerHTML = income;
 		
 }	

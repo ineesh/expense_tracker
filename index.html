@@ -31,7 +31,7 @@
 	<br>
 	<br>
 	
-		<input type="button" onClick="taable()" value="Submit">		
+		<input type="button" onClick="taable()" value="Submit" id="h">		
 		</div>
 
 	
@@ -49,6 +49,11 @@
 		
 	</table>
 	
+	<br>
+	<br>
+	
+	<h2>INCOME</h2>
+	<h2 id="op1"></h2>
 	
 
 </body>
@@ -62,23 +67,39 @@
 	var da = document.getElementById("date").value;
 	var amt = document.getElementById("amt").value;
 	var td = document.getElementById("td");
-		
-	
+
 	
 	var row = td.insertRow(1);
+
 	
 	
 	var cell_1 = row.insertCell(0);
 	var cell_2 = row.insertCell(1);
 	var cell_3 = row.insertCell(2);
 	
+
 		
 	cell_1.innerHTML = d;
 	cell_2.innerHTML = da;
 	cell_3.innerHTML = amt;
-		
-			console.log("re");	
 	
+	var income = 0;
+		
+		for(var i = 1;i <= td.rows.length - 1;i++)
+			{
+				var x = td.rows.item(i).innerHTML;
+				var n = x.split("<td>");
+				var m = n[3].split("</td>");
+				var o = parseInt(m[0]);
+				console.log(o);
+				
+				
+				income += o;
+				
+			
+			}
+		document.getElementById("op1").innerHTML = income;
+		
 }	
 
 

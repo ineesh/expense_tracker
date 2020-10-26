@@ -30,3 +30,7 @@ table, td, th {
 	border-spacing: 10px;
 	
 }
+
+h2{
+	border: 5px dotted;
+}

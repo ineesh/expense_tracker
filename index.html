@@ -2,14 +2,14 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>Expense Tracker</title>
 <link href="style.css" rel="stylesheet">
 
 
 </head>
 
 <body>
-	<h1 id="l">EXPENCE TRACKER</h1>
+	<h1 id="l"><strong><em>EXPENSE TRACKER</em></strong></h1>
 	<br>
 	
 	<form id="form1"> 
@@ -31,6 +31,15 @@
 	<br>
 	<br>
 	
+	<div class="q">
+	<label class="switch">
+  	<input type="checkbox" id="check">
+  	<span class="slider"></span>
+	</label>
+	<h5 class="la">EXPENSE</h5>
+	<h5>INCOME</h5>
+	</div>
+	
 		<input type="button" onClick="taable()" value="Submit" id="h">		
 		</div>
 
@@ -39,6 +48,19 @@
 	</form>
 	<br>
 	<table style="width: 100%" id="td">
+		
+	<tr>
+		<th>DESCRIPTION</th>
+		<th>DATE</th>
+		<th>AMOUNT (in ₹ )</th>
+	</tr>
+		
+		
+	</table>
+	<br>
+
+	
+	<table style="width: 100%" id="td1">
 		
 	<tr>
 		<th>DESCRIPTION</th>
@@ -59,21 +81,29 @@
 </body>
 	<script>
 		
-
-	
+		var income = 0;
+		var i = 1;
+		var j = 1;
+		
 	function taable(){
 
+	var c = document.getElementById("check")
 	var d = document.getElementById("desc").value;
 	var da = document.getElementById("date").value;
-	var amt = document.getElementById("amt").value;
+	var amt = parseInt(document.getElementById("amt").value);
+		
 	var td = document.getElementById("td");
+	var td1 = document.getElementById("td1");
 
 	if(d == "")
 	{
 		return;}
 	else{
-	td.style.opacity = 1;
 	
+	td.style.opacity = 1;
+	td1.style.opacity = 1;
+	
+	if(c.checked == false){
 	var row = td.insertRow(1);
 
 	
@@ -88,26 +118,61 @@
 	cell_2.innerHTML = da;
 	cell_3.innerHTML = amt;
 	
-	var income = 0;
+	
 		
-		for(var i = 1;i <= td.rows.length - 1;i++)
-			{
+		
+			while(i <= td.rows.length-1){
 				var x = td.rows.item(i).innerHTML;
 				var n = x.split("<td>");
 				var m = n[3].split("</td>");
 				var o = parseInt(m[0]);
-				console.log(o);
-				
+								
 				
 				income += o;
+				i++;
+
+			
+			}
+	
+}
+		else{
+			var row2 = td1.insertRow(1);
+
+	console.log(income);
+	
+	var cell_5 = row2.insertCell(0);
+	var cell_6 = row2.insertCell(1);
+	var cell_7 = row2.insertCell(2);
+	
+	
+		
+	cell_5.innerHTML = d;
+	cell_6.innerHTML = da;
+	cell_7.innerHTML = amt;
+			
+			while(j <= td1.rows.length-1){
+				var d = td1.rows.item(j).innerHTML;
+				var u = d.split("<td>");
+				var t = u[3].split("</td>");
+				var q = parseInt(t[0]);
+				
+				
+				j++;
+				income -= q;
 				
 			
 			}
+		console.log(income);
+	
+	
+		}
 		document.getElementById("op2").style.opacity = 1;
 		document.getElementById("op1").innerHTML = income;
 		
 }	
 	}
+	
+
 
 	
 	
